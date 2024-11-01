@@ -13,6 +13,7 @@ import java.util.Map;
 @Component
 public class JwtUtil {
 
+
     private final String SECRET_KEY = "test"; // Замените на ваш секретный ключ
 
     public String generateToken(String username) {

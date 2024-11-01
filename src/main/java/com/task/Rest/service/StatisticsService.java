@@ -36,7 +36,7 @@ public class StatisticsService {
     }
 
     @Async
-    @Scheduled(fixedRate = 300000)
+    @Scheduled(initialDelay = 0, fixedRate = 300000)
     public void loadStatisticsFromJson() {
         String filename = "C:\\Users\\xika0\\Desktop\\test_report.json";
         try {
@@ -44,10 +44,16 @@ public class StatisticsService {
 
             // Теперь можно сохранять данные, например:
             for (SalesAndTrafficByDate data : statistics.getSalesAndTrafficByDate()) {
+                if (!salesAndTrafficByDateRepo.findBySalesAndTrafficByDate_Date(data.getDate()).isEmpty() && salesAndTrafficByDateRepo.findBySalesAndTrafficByDate_Date(data.getDate()).get(0).toString().equals(data.toString())) {
+                    continue;
+                }
                 salesAndTrafficByDateRepo.save(data);
             }
 
             for (SalesAndTrafficByAsin data : statistics.getSalesAndTrafficByAsin()) {
+                if(!salesAndTrafficByAsinRepo.findBySalesAndTrafficByAsin_ParentAsin(data.getParentAsin()).isEmpty()&& salesAndTrafficByAsinRepo.findBySalesAndTrafficByAsin_ParentAsin(data.getParentAsin()).get(0).toString().equals(data.toString())){
+                    continue;
+                }
                 salesAndTrafficByAsinRepo.save(data);
             }
 
