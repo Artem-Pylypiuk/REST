@@ -1,7 +1,6 @@
 package com.task.Rest.repository;
 
 import com.task.Rest.model.SalesAndTrafficByAsin;
-import com.task.Rest.model.Statistics;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 

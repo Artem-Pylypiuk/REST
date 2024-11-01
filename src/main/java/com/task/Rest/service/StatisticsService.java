@@ -8,7 +8,6 @@ import com.task.Rest.repository.SalesAndTrafficByAsinRepo;
 import com.task.Rest.repository.SalesAndTrafficByDateRepo;
 import com.task.Rest.repository.StatisticsRepository;
 import jakarta.annotation.PostConstruct;
-import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
