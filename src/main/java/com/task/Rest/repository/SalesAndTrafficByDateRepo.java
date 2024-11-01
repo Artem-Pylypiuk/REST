@@ -8,8 +8,8 @@ import org.springframework.data.mongodb.repository.Query;
 import java.util.List;
 
 public interface SalesAndTrafficByDateRepo extends MongoRepository<SalesAndTrafficByDate,String> {
-    @Query("{ 'salesAndTrafficByDate.date': ?0 }")
+    @Query("{ 'date': ?0 }")
     List<SalesAndTrafficByDate> findBySalesAndTrafficByDate_Date(String date);
-    @Query("{ 'salesAndTrafficByDate.date': { $gte: ?0, $lte: ?1 } }")
+    @Query("{ 'date': { $gte: ?0, $lte: ?1 } }")
     List<SalesAndTrafficByDate> findBySalesAndTrafficByDate_DateBetween(String startDate, String endDate);
 }

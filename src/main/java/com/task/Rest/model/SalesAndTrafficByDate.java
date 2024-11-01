@@ -1,12 +1,14 @@
 package com.task.Rest.model;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.math.BigDecimal;
 
 @Document(collection = "SalesAndTrafficByDate")
 @Data
+@NoArgsConstructor
 public class SalesAndTrafficByDate {
     private String date;
     private SalesByDate salesByDate;
